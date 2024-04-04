@@ -10,6 +10,10 @@ router.get('/tutorial', (req, res) => {
     res.json("Bateu no /tutorial GET")
 })
 
+router.post('/tutorial', (req, res) => {
+    res.json('Bateu no /teste/tutorial')
+})
+
 // Exportar modulo
 module.exports = router
 
