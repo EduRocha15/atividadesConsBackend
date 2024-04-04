@@ -12,4 +12,4 @@ var altura = parseFloat(prompt("Qual a altura? "))
 
 var v = PI*(raio*raio)*altura
 
-console.log(`O volume é de ${v.toFixed(2)}^3`)
+console.log(`O volume é de ${v.toFixed(2)}`)
