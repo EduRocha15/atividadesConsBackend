@@ -30,6 +30,6 @@ app.post('/exercicio2', (req,res) => {
 
 
 app.listen(port,() => {
-    console.log("Teste iniciado, API rodando HTTP://localhost:3000")
+    console.log("Teste iniciado, API rodando em HTTP://localhost:3000")
 })
 
