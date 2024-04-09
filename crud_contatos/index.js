@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
     res.json('OK')
 })
 
+
 app.use(contatoRouter)
 
 app.listen(port, () => {
