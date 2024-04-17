@@ -28,10 +28,10 @@ router.get('/produtos', (req, res)=>{
  })
 
 // Buscar produto por ID
-router.use('/produtos/:id', (req, res)=>{
+router.get('/produtos/:id', (req, res)=>{
 
    const id = req.params.id
-   const produto = listaProdutos.findIndex(listaProdutos.id == id)
+   const produto = listaProdutos.find(produto => produto.id == id)
    
    if(produto){
       return res.status(200).json(produto)
@@ -45,7 +45,7 @@ router.post('/produtos', (req, res)=>{
    const dadosProdutos = req.body
    const novoProduto = {
 
-      id: listaProdutos.length + 1,
+      id: listaProdutos. ,
       nome: dadosProdutos.nome,
       preco: dadosProdutos.preco
    }
@@ -75,14 +75,14 @@ router.put('/produtos/:id', (req, res)=>{
 
    res.json({mensagem: "Produto atualizado com sucesso!"})
 
+})
+
    // deleta um produto pelo id
-   router.delete('/produtos', (req, res)=>{
-      const id = req.params.id
-      const index = listaProdutos.findIndex(listaProdutos.id == id)
+router.delete('/produtos', (req, res)=>{
+   const id = req.params.id
+   const index = listaProdutos.findIndex(listaProdutos.id == id)
 
-      listaProdutos.splice(id, 1)
+   listaProdutos.splice(id, 1)
 
-      res.json({mensagem: "Produto excluido com sucesso!"})
-   })
-
+   res.json({mensagem: "Produto excluido com sucesso!"})
 })
