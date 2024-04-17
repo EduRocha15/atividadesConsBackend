@@ -24,16 +24,19 @@ const listaProdutos = [
 // Buscar todos os produtos
 router.get('/produtos', (req, res)=>{
 
-    res.json(listaProdutos)
+    res.status(200).json(listaProdutos)
  })
 
 // Buscar produto por ID
 router.use('/produtos/:id', (req, res)=>{
 
    const id = req.params.id
-   const produto = listaProdutos.find(produto => produto.id == id)
-
-   res.json(produto)
+   const produto = listaProdutos.findIndex(listaProdutos.id == id)
+   
+   if(produto){
+      return res.status(200).json(produto)
+   }  
+   return res.status(404).json({mensagem: "Produto não encontrado!"})
 })
 
 // Adicionando novo produto
@@ -48,7 +51,7 @@ router.post('/produtos', (req, res)=>{
    }
    listaProdutos.push(novoProduto)
 
-   res.json({mensagem: 'Produto cadastrado com sucesso!'})
+   res.json({mensagem: "Produto cadastrado com sucesso!"})
 })
 
 // Atualizando produto
@@ -70,7 +73,7 @@ router.put('/produtos/:id', (req, res)=>{
 
    listaProdutos[index] = produtoAtualizado
 
-   res.json({mensagem: 'Produto atualizado com sucesso!'})
+   res.json({mensagem: "Produto atualizado com sucesso!"})
 
    // deleta um produto pelo id
    router.delete('/produtos', (req, res)=>{
