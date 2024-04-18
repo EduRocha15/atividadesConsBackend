@@ -32,7 +32,9 @@ const listaPessoas = [
 
 // busca a lista com todas as pessoas cadastradas
 router.get('/pessoas', (req, res)=>{
+
 	res.json(listaPessoas)
+
 })
 
 // busca de pessoa por ID

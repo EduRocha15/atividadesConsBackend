@@ -25,7 +25,8 @@ const listaProdutos = [
 router.get('/produtos', (req, res)=>{
 
     res.status(200).json(listaProdutos)
- })
+ 
+})
 
 // Buscar produto por ID
 router.get('/produtos/:id', (req, res)=>{
@@ -45,7 +46,7 @@ router.post('/produtos', (req, res)=>{
    const dadosProdutos = req.body
    const novoProduto = {
 
-      id: listaProdutos. ,
+      id: listaProdutos.id,
       nome: dadosProdutos.nome,
       preco: dadosProdutos.preco
    }
