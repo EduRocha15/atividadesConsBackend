@@ -28,8 +28,4 @@ router.post('/contatos', (req, res) => {
 
 })
 
-router.post('/contatos', (req, res) => {
-    
-})
-
 module.exports = router

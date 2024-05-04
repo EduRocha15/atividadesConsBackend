@@ -24,7 +24,7 @@ const listaProdutos = [
 // Buscar todos os produtos
 router.get('/produtos', (req, res)=>{
 
-    res.json(listaProdutos)
+   res.json(listaProdutos)
  })
 
 // Buscar produto por ID
@@ -77,7 +77,7 @@ router.put('/produtos/:id', (req, res)=>{
       const id = req.params.id
       const index = listaProdutos.findIndex(listaProdutos.id == id)
 
-      listaProdutos.splice(id, 1)
+      listaProdutos.splice(index, 1)
 
       res.json({mensagem: "Produto excluido com sucesso!"})
    })
