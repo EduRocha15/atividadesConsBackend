@@ -42,6 +42,16 @@ app.get('/tarefas/:id', async (req, res)=>{
   res.json(tarefa)
 })
 
+app.delete('/tarefas/:id', async (req, res) => {
+  await Tarefa.findByIdAndDelete(req.params.id)
+  res.json({ mensagem: "Tarefa excluida com sucesso!" })
+})
+
+app.put('/tarefas/:id', async (req, res) => {
+  const tarefaAtualizada = await Tarefa.findByIdAndUpdate(req.params.id, req.body, { new: true })
+  res.json(tarefaAtualizada)
+})
+
 // Start
 app.listen(port, ()=>{
   console.log({mensagem:`API rodando em http://localhost:${port}`})
