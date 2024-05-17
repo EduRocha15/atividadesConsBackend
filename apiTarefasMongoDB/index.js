@@ -2,10 +2,10 @@
 const express = require('express')
 require('dotenv').config()
 const mongoose = require('mongoose')
-const port = 3000
 
 //Configurações
 const app = express()
+const port = 3000
 
 // Conexão com server
 const DB_USER = process.env.DB_USER
