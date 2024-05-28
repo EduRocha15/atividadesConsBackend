@@ -1,21 +1,21 @@
-// Configurando
 const express = require('express')
 const app = express()
-const PORT = 3000
 
-//Connections
-// Require do modulo de conexão do DB
-const DBConnect = require('./database/connections')
-DBConnect()
+const PORT = process.env.PORT
 
-// Midllewares
+const DBconnection = require('./database/connection')
+DBconnection()
+
 app.use(express.json())
 
-// Import rotas
-const routes = require('./routes/routes')
-app.use(routes)
+const autenticacaoRoutes = require('./routes/autenticacao.routes')
+app.use(autenticacaoRoutes)
 
-// Configurando a api para ouvir na porta correta
-app.listen(PORT, ()=>{
-  console.log(`API rodando em HTTP://localhost:${PORT}`)
+const { checarToken } = require('./validators/AutenticacaoValidador')
+
+const routes = require('./routes/routes')
+app.use("/", checarToken, routes)
+
+app.listen(PORT, () => {
+    console.log(`Aplicação rodando na porta ${PORT}`)
 })

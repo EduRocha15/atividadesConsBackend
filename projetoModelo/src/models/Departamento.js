@@ -1,21 +1,17 @@
 const mongoose = require('mongoose')
 
-// Criando o schema, modelo da colection
 const schema = new mongoose.Schema({
-  nome: {
+  nome:{
     type: String,
     required: true
   },
+
   descricao:{
     type: String,
-    required: false
-  },
-  salario: {
-    type: Number,
     required: true
   }
 }, {timestamps: true})
 
-const Cargo = mongoose.model('cargo', schema)
+const Departamento = mongoose.model('departamento', schema)
 
-module.exports = Cargo
+module.exports = Departamento
