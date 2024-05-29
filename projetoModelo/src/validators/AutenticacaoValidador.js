@@ -78,7 +78,7 @@ async function checarToken(req, res, next) {
         jwt.verify(token, JWT_SECRET)
         next()
     } catch (error) {
-        return res.status(401).json({ mensagem: "token inválido" })
+        return res.status(401).json({ mensagem: "Acesso negado!" })
     }
 
 }

@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const PORT = process.env.PORT
+const port = 3000
 
 const DBconnection = require('./database/connection')
 DBconnection()
@@ -16,6 +16,6 @@ const { checarToken } = require('./validators/AutenticacaoValidador')
 const routes = require('./routes/routes')
 app.use("/", checarToken, routes)
 
-app.listen(PORT, () => {
-    console.log(`Aplicação rodando na porta ${PORT}`)
+app.listen(port, () => {
+    console.log(`Aplicação rodando na porta ${port}`)
 })
