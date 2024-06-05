@@ -30,9 +30,9 @@ const schema = new mongoose.Schema ({
     required: false
   },
 
-  project:{
+  projeto:{
     type: mongoose.Types.ObjectId,
-    ref: 'project',
+    ref: 'projeto',
     required: false
   },
 }, {timestamps: true})

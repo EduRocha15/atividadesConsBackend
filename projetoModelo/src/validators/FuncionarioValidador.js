@@ -55,11 +55,11 @@ function funcionarioValidador(req, res, next) {
             }
               return erro
           })
-
+          
           res.status(400).json(
             {mensagem: "Falha na validação dos campos", erros}
           )
-      })
+      } )
 }
 
 module.exports = {funcionarioValidador}
