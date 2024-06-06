@@ -6,10 +6,6 @@ const editoraSchema = yup.object().shape({
     .string("Por favor, insira o nome da editora.")
     .required("Campo obrigatório!"),
 
-  endereco: yup
-    .string("Por favor, insira o endereço da editora.")
-    .required("Campo obrigatório!"),
-
   telefone: yup
     .string("Por favor insira o telefone da editora.")
     .required("Campo obrigatório!"),

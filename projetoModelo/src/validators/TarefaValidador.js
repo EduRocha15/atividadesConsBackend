@@ -24,7 +24,7 @@ const schema = yup.object().shape(
     funcionario: yup
       .string('Campo obrigatório'),
     
-    project: yup
+    projeto: yup
       .string('Campo obrigatório'),
   }
 )

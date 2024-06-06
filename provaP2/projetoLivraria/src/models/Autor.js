@@ -16,17 +16,17 @@ const autorSchema = new mongoose.Schema ({
     required: true
   },
 
-  biografia:{
+  sobre:{
     type: String,
     required: true
   },
   
   obras:{
-    type: mongoose.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'livro'
   }
 }, {timestamps: true})
 
-const Autor = mongoose.model ('Autore', autorSchema)
+const Autor = mongoose.model ('autor', autorSchema)
 
 module.exports = Autor

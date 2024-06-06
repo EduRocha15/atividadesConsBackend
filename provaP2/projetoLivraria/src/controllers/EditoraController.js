@@ -27,10 +27,37 @@ async function buscarPorId (req, res) {
   }
 }
 
+async function atualizar (req, res) {
+  const edAtualizada = await Editora.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  if(edAtualizada){
+    res.status(200).json(
+      {
+        mensagem: "Editora atualizada.",
+        edAtualizada
+      }
+    )
+  } else {
+    res.status(404).json({mensagem: "Editora não encontrada!"})
+  }
+}
+
+async function excluir (req, res) {
+  const edDeletada = await Editora.findByIdAndDelete (req.params.id)
+  if (edDeletada) {
+    res.status(200).json({
+        mensagem: "Editora excluída com sucesso."
+      })
+  } else {
+    res.status(404).json({
+      mensagem: "Editora não encontrada."
+    })
+  }
+}
+
 module.exports = {
   criar,
   buscarTodos,
   buscarPorId,
-//  atualizar,
-//  excluir
+  atualizar,
+  excluir
 }

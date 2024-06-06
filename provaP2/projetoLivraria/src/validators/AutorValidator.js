@@ -1,27 +1,22 @@
 const yup = require('yup')
 
-const autorSchema = yup.object().shape (
-  {
+const autorSchema = yup.object().shape ({
     nome: yup
       .string ("Por favor, insira um nome válido.")
       .required ("Campo obrigatório!"),
-  },
-  {
+  
     nacionalidade: yup
       .string ("Por favor, insira a nacionalidade do autor.")
       .required ("Campo obrigatório."),
-  },
-  {
+  
     nascimento: yup
       .date("Por favor, insira uma data válida.")
       .required ("Campo obrigatório!"),
-  },
-  {
-    biografia: yup
-      .string("Por favor, insira a biografia do autor.")
+ 
+    sobre: yup
+      .string("Por favor, insira algo sobre o autor/a.")
       .required ("Campo obrigatório!"),
-  }
-)
+})
 
 function autorValidator (req, res, next) {
   autorSchema
