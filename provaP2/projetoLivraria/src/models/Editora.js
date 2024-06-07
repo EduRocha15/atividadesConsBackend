@@ -7,14 +7,9 @@ const editoraSchema = new mongoose.Schema ({
     required: true
   },
 
-  endereco: {
-    cep: String,
-    uf: String,
-    localidade: String,
-    bairro: String,
-    logradouro: String,
-    numero: String,
-    complemento: String
+  sede: {
+    type: String,
+    required: true
   },
 
   telefone: {
@@ -27,10 +22,10 @@ const editoraSchema = new mongoose.Schema ({
     required: true
   },
 
-  livros: {
+  livros: [{
     type: mongoose.Types.ObjectId,
     ref: 'livro'
-  }
+  }]
 }, {timestamps: true})
 
 const Editora = mongoose.model ('editora', editoraSchema)
