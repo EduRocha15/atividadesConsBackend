@@ -13,12 +13,12 @@ const livroSchema = new mongoose.Schema({
     required: true
   },
 
-  categoria: {
-    type: mongoose.Types.ObjectId,
-    ref: 'categoria'
+  genero: {
+    type: String,
+    required: true
   },
 
-  preco: {
+  ano_publicacao: {
     type: Number,
     required: true
   },
@@ -28,7 +28,7 @@ const livroSchema = new mongoose.Schema({
     ref: 'editora',
     required: true
   }
-})
+}, {timestamps: true})
 
 const Livro = mongoose.model('livro', livroSchema)
 

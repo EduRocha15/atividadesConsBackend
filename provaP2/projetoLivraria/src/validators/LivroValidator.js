@@ -9,8 +9,12 @@ const livroSchema = yup.object().shape({
     .string("Por favor, insira o autor/a deste livro.")
     .required("Campo obrigatório!"),
 
-  preco: yup
-    .number("Insira o valor do livro.")
+  genero: yup
+    .string("Por favor, insira o gênero do livro")
+    .required("Campo obrigatório!"),
+
+  ano_pubilicacao: yup
+    .number("Insira uma data válida.")
     .required("Campo obrigatório!"),
 
   editora: yup

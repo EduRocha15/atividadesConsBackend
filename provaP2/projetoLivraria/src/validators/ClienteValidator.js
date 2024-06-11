@@ -1,13 +1,13 @@
 const yup = require('yup')
 
-const editoraSchema = yup.object().shape({
+const clienteSchema = yup.object().shape({
 
-  nome: yup
-    .string("Por favor, insira o nome da editora.")
+  cpf: yup
+    .number("Por favor, insira o cpf do cliente.")
     .required("Campo obrigatório!"),
 
-  sede: yup
-    .string("Por favor, insira aonde fica a sede da editora.")
+  nome: yup
+    .string("Por favor, insira nome do cliente.")
     .required("Campo obrigatório!"),
 
   email: yup
@@ -21,8 +21,8 @@ const editoraSchema = yup.object().shape({
 
 })
 
-function editoraValidator (req, res, next) {
-  editoraSchema
+function clienteValidator (req, res, next) {
+  clienteSchema
     .validate(req.body, {abortEarly: false})
     .then(() => next())
     .catch(err => {
@@ -42,4 +42,4 @@ function editoraValidator (req, res, next) {
     )
 }
 
-module.exports = { editoraValidator }
+module.exports = { clienteValidator }

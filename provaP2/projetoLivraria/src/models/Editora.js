@@ -12,12 +12,12 @@ const editoraSchema = new mongoose.Schema ({
     required: true
   },
 
-  telefone: {
+  email: {
     type: String,
     required: true
   },
 
-  email: {
+  telefone: {
     type: String,
     required: true
   },

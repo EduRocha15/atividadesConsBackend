@@ -21,10 +21,10 @@ const autorSchema = new mongoose.Schema ({
     required: true
   },
   
-  obras:{
+  obras:[{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'livro'
-  }
+  }]
 }, {timestamps: true})
 
 const Autor = mongoose.model ('autor', autorSchema)

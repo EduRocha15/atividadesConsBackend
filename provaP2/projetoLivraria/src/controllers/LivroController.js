@@ -29,11 +29,13 @@ async function buscarPorId (req, res) {
 }
 
 async function atualizar (req, res) {
-  const livroAtualizado = await Livro.findByIdAndUpdate(req.params.id, req.body, {new: true})
-  if (livroAtualizado) {
+  const livroAtu = await Livro.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .populate('autor', 'nome')
+    .populate('editora', 'nome')
+  if (livroAtu) {
     res.status(200).json({
       mensagem: "Os dados do livro foram atualizados.",
-      livroAtualizado
+      livroAtu
     }) 
   } else {
     res.status(404).json({mensagem: "Livro não encontrado!"})

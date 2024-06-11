@@ -33,8 +33,7 @@ function usuarioValidador(req, res, next) {
                 {
                     mensagem: "Falha na validação dos campos",
                     erros: errors
-                }
-            )
+                })
         })
 }
 
@@ -78,11 +77,11 @@ async function checarToken(req, res, next) {
         jwt.verify(token, JWT_SECRET)
         next()
     } catch (error) {
-        return res.status(401).json({ mensagem: "Acesso negado!" })
+        return res.status(401).json({
+            mensagem: "Acesso negado!"
+        })
     }
-
 }
-
 
 module.exports = {
     usuarioValidador,

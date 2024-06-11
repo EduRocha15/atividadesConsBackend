@@ -13,12 +13,13 @@ async function criar(req, res) {
 
 async function buscarTodos(req, res) {
   const autor = await Autor.find()
-
+  .populate('obras', 'titulo')
   res.status(200).json(autor)
 }
 
 async function buscarPorId(req, res) {
   const autor = await Autor.findById(req.params.id)
+  .populate('obras', 'titulo')
     if(autor) {
       res.status(200).json(autor)
     } else {
@@ -27,9 +28,13 @@ async function buscarPorId(req, res) {
 }
 
 async function atualizar(req, res) {
-  const autorAtualizado = await Autor.findByIdAndUpdate(req.params.id, req.body, {new:true})
-    if(autorAtualizado){
-      res.status(200).json("Autor/a atualizado com sucesso.")
+  const autorAtu = await Autor.findByIdAndUpdate(req.params.id, req.body, {new:true})
+  .populate('obras', 'titulo')
+    if(autorAtu){
+      res.status(200).json({
+        mensagem: "Autor/a atualizado com sucesso.",
+        autorAtu
+      })
     } else {
       res.status(404).json("Autor/a não encontrado!")
     }
