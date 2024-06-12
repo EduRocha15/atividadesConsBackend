@@ -70,7 +70,7 @@ function loginValidador(req, res, next) {
 
 async function checarToken(req, res, next) {
     try {
-        const authorizationHeader = req.get('Authorization')
+        const authorizationHeader = req.headers['authorization']
         const separator = authorizationHeader.split(' ')
         const token = separator[1]
 

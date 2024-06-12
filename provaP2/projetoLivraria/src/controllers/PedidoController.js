@@ -4,7 +4,10 @@ async function criar (req, res) {
   const pedido = new Pedido(req.body)
   const novoPedido = await pedido.save()
 
-  res.status(201).json(novoPedido)
+  res.status(201).json({
+    mensagem: "Pedido criado!",
+    novoPedido
+  })
 }
 
 async function buscarTodos (req, res) {
@@ -47,7 +50,7 @@ async function atualizar (req, res) {
 async function excluir (req, res) {
   const pedidoDel = await Pedido.findByIdAndDelete(req.params.id)
 
-  if (pedidodel) {
+  if (pedidoDel) {
     res.status(200).json({
       mesangem: "Pedido excluido!"
     })

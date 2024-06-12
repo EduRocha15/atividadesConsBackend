@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 
 const JWT_SECRET = process.env.JWT_SECRET
 
-const funcionarioSchema = yup.object().shape({
+const registroSchema = yup.object().shape({
   nome: yup
     .string("Por favor, insira seu nome.")
     .required("Campo obrigatório!"),
@@ -17,8 +17,8 @@ const funcionarioSchema = yup.object().shape({
     .required("Campo obrigatório!"),
 })
 
-function validarFuncionario (req, res, next) {
-  funcionarioSchema
+function validarRegistro (req, res, next) {
+  registroSchema
     .validate(req.body, {abortEarly: false})
     .then(() => next())
     .catch(err => {
@@ -65,10 +65,10 @@ function validarLogin (req, res, next) {
     })
 }
 
-function validarToken (req, res, next) {
+async function validarToken (req, res, next) {
   try {
-    const authorizationHeader = rq.get('authorization')
-    const separator = authorizationHeader.split(' ')
+    const authHeader = req.headers['authorization']
+    const separator = authHeader.split(' ')
     const token = separator[1]
 
     jwt.verify(token, JWT_SECRET)
@@ -81,7 +81,7 @@ function validarToken (req, res, next) {
 }
 
 module.exports = {
-  validarFuncionario,
+  validarRegistro,
   validarLogin,
   validarToken
 }

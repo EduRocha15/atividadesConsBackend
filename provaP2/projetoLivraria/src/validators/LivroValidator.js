@@ -13,13 +13,13 @@ const livroSchema = yup.object().shape({
     .string("Por favor, insira o gênero do livro")
     .required("Campo obrigatório!"),
 
-  ano_pubilicacao: yup
-    .number("Insira uma data válida.")
+  ano_publicacao: yup
+    .number("Insira o ano da publicação do livro.")
     .required("Campo obrigatório!"),
 
   editora: yup
     .string("Por favor, insira a editora do livro.")
-    .required("Campo obrigatório!")
+    .required("Campo obrigatório!"),
 })
 
 function livroValidator (req, res, next) {
