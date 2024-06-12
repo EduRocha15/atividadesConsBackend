@@ -1,0 +1,921 @@
+{
+	"info": {
+		"_postman_id": "74ad2092-2ffd-404f-803f-4f7f7dbc5e5e",
+		"name": "API-LIVRARIA",
+		"description": "A API de Livraria é uma interface de programação de aplicações projetada para gerenciar as operações de uma livraria. Ela fornece funcionalidades CRUD para \"autores\", \"editoras\", \"livros\", \"clientes\" e \"pedidos\". Também funcinalidades para \"registrar\" e \"login, para autenticar o usuario e permitir o acesso as rotas CRUD da api.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34142880"
+	},
+	"item": [
+		{
+			"name": "CRUD-Autor",
+			"item": [
+				{
+					"name": "Autor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Clarice Lispector\",\r\n    \"nacionalidade\": \"Brasileira\",\r\n    \"nascimento\": \"1920-12-10\",\r\n    \"sobre\": \"Clarice Lispector foi uma escritora brasileira nascida na Ucrânia, famosa por sua prosa introspectiva e inovadora. Entre suas obras mais conhecidas estão 'A Hora da Estrela' e 'Perto do Coração Selvagem'.\"\r\n   \r\n \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/autor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autor"
+							]
+						},
+						"description": "Rota para poder cadastrar um autor."
+					},
+					"response": []
+				},
+				{
+					"name": "Autor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/autor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autor"
+							]
+						},
+						"description": "Rota para poder buscar todos os autores."
+					},
+					"response": []
+				},
+				{
+					"name": "AutorPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/autor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autor"
+							]
+						},
+						"description": "Rota para poder buscar um autor específico."
+					},
+					"response": []
+				},
+				{
+					"name": "Autor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/autor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autor"
+							]
+						},
+						"description": "Rota para poder atualizar os dados de um autor."
+					},
+					"response": []
+				},
+				{
+					"name": "Autor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/autor",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"autor"
+							]
+						},
+						"description": "Rota para poder excluir os dados de um autor."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD para rotas \"/autor\". Nela o usuário poderá cadastrar um novo funcionário, buscar todo o registro de autores cadastrados, poderá buscar por um autor específico, atualizar os dados dos autores, e deletar os dados de um autor.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "CRUD-Editora",
+			"item": [
+				{
+					"name": "Editora",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/editora",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"editora"
+							]
+						},
+						"description": "Rota para poder cadastrar uma editora."
+					},
+					"response": []
+				},
+				{
+					"name": "Editora",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/editora",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"editora"
+							]
+						},
+						"description": "Rota para poder buscar todas as editoras cadastradas."
+					},
+					"response": []
+				},
+				{
+					"name": "EditoraPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/editora",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"editora"
+							]
+						},
+						"description": "Rota para poder buscar uma editora específica."
+					},
+					"response": []
+				},
+				{
+					"name": "Editora",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/editora",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"editora"
+							]
+						},
+						"description": "Rota para poder atualizar os dados de uma editora."
+					},
+					"response": []
+				},
+				{
+					"name": "Editora",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/editora",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"editora"
+							]
+						},
+						"description": "Rota para poder excluir uma editora."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD para rotas \"/editora\". Nela o usuário poderá cadastrar uma nova editora, buscar todo o registro de editoras cadastradas, poderá buscar por uma editora específica, atualizar os dados das editoras e deletar os dados de uma editora."
+		},
+		{
+			"name": "CRUD-Livro",
+			"item": [
+				{
+					"name": "Livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/livro",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livro"
+							]
+						},
+						"description": "Rota para poder cadastrar um livro."
+					},
+					"response": []
+				},
+				{
+					"name": "Livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/livro",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livro"
+							]
+						},
+						"description": "Rota para poder buscar todos os livro cadastrados."
+					},
+					"response": []
+				},
+				{
+					"name": "LivroPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/livro",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livro"
+							]
+						},
+						"description": "Rota para poder buscar um livro específico."
+					},
+					"response": []
+				},
+				{
+					"name": "Livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/livro",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livro"
+							]
+						},
+						"description": "Rota para poder atualizar os dados de um livro."
+					},
+					"response": []
+				},
+				{
+					"name": "Livro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/livro",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"livro"
+							]
+						},
+						"description": "Rota para poder excluir um livro."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD para rotas \"/livro\". Nela o usuário poderá cadastrar um novo livro, buscar todo o registro de livros cadastrados, poderá buscar por um livro específico, atualizar os dados dos livros, e deletar os dados de um livro."
+		},
+		{
+			"name": "CRUD-Cliente",
+			"item": [
+				{
+					"name": "Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cpf\": 98765432112,\r\n    \"nome\": \"Carlos Avarange\",\r\n    \"email\": \"carava123@gmail.com\",\r\n    \"telefone\": \"(61)91234-5678\",\r\n    \"endereco\": {\r\n        \"cep\": \"72987654\",\r\n        \"cidade\": \"Barra do capimirim\",\r\n        \"bairro\": \"Barra da tijuca\",\r\n        \"rua\": \"Afonso pena\",\r\n        \"numero\": \"204\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/cliente",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Rota para poder cadastrar um cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cliente",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Rota para poder buscar todos os cliente cadastrados."
+					},
+					"response": []
+				},
+				{
+					"name": "ClientePorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cliente",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Rota para poder buscar um cliente específico."
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cliente",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Rota para poder atualizar os dados de um cliente."
+					},
+					"response": []
+				},
+				{
+					"name": "Cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cliente",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cliente"
+							]
+						},
+						"description": "Rota para poder excluir um cliente."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD para rotas \"/cliente\". Nela o funcionário poderá cadastrar um novo cliente, buscar todo o registro de clientes cadastrados, poderá buscar por um cliente específico, atualizar os dados dos clientes, e deletar os dados de um cliente."
+		},
+		{
+			"name": "CRUD-Pedido",
+			"item": [
+				{
+					"name": "Pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/pedido",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Rota para poder criar um pedido."
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pedido",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Rota para poder buscar todos os pedidos."
+					},
+					"response": []
+				},
+				{
+					"name": "PedidoPorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pedido",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Rota para poder buscar um pedido específico."
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pedido",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Rota para poder atualizar um pedido."
+					},
+					"response": []
+				},
+				{
+					"name": "Pedido",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/pedido",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"pedido"
+							]
+						},
+						"description": "Rota para poder excluir um pedido."
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD para rotas \"/pedido\". Nela o usuário poderá cadastrar um novo pedido, buscar todo o registro de pedidos cadastrados, poderá buscar por um pedido específico, atualizar os dados dos pedidos, e deletar os dados de um pedido."
+		},
+		{
+			"name": "registrar/login",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Carlos Yuri\",\r\n    \"codigo\": \"VND-08\",\r\n    \"senha\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/registrar",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"registrar"
+							]
+						},
+						"description": "Rota para o funcionário criar seu registro."
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"codigo\": \"VND-08\",\r\n    \"senha\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/auth/login",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": "Rota para o funcionário poder fazer o login e ter acesso as funcinalidades da aplicação."
+					},
+					"response": []
+				}
+			],
+			"description": "Nesta pasta tem as rotas \"/cadastrar\" e \"/login\". Nela o funcionário poderá se cadastrar para poder efetuar o login e ter acesso as funcionalidades da aplicação."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb2RpZ28iOiJWTkQtMDgiLCJpYXQiOjE3MTgyMjI0NDd9.iZL7WpPjVCaZrbiUDGrF5YS1kaHfGJu-TIXRhlXQtNU",
+			"type": "string"
+		},
+		{
+			"key": "id",
+			"value": "6669df6f1dfa4ae85da80875",
+			"type": "string"
+		}
+	]
+}
