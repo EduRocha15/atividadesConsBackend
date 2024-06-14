@@ -4,7 +4,7 @@
 
 const prompt = require('prompt-sync')();
 
-const nomeAluno = prompt("Digite o nome do aluno?")
+const nomeAluno = prompt("Digite o nome do aluno? ")
 const nota1 = Number(prompt("Digite a nota 1: ").replace(',','.'))
 const nota2 = Number(prompt("Digite a nota 2: ").replace(',', '.'))
 const nota3 = Number(prompt("Digite a nota 3: ").replace(',', '.'))
